@@ -1,4 +1,3 @@
-import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
 import { HashLink as Link } from "react-router-hash-link";
 import {
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import { Box } from "@mui/system";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -27,9 +27,7 @@ const useStyles = makeStyles({
 export const Header = () => {
   const classes = useStyles();
 
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
