@@ -1,11 +1,9 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import { Container, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import MailIcon from "@mui/icons-material/Mail";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 

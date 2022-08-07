@@ -1,10 +1,9 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-// import ProductHeroLayout from "./ProductHeroLayout";
 
-export default function IntroPage() {
+const IntroPage = () => {
   return (
-    <Box>
+    <Box id="introPage">
       <Typography
         color="inherit"
         align="center"
@@ -25,4 +24,6 @@ export default function IntroPage() {
       </Typography>
     </Box>
   );
-}
+};
+
+export default IntroPage;

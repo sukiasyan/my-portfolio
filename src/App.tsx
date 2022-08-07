@@ -1,23 +1,26 @@
-import { Routes, Route } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Skills } from "./pages/Skills";
-import { Experience } from "./pages/Experience";
-import { Education } from "./pages/Education";
-import { Contacts } from "./pages/Contacts";
-
 import "./App.css";
+import About from "./pages/About";
+import Experience from "./pages/Experience";
+import Contacts from "./pages/Contacts";
+import Skills from "./pages/Skills";
+import AppAppBar from "./pages/AppAppBar";
+import IntroPage from "./pages/IntroPage";
+import ProductCatalogue from "./pages/ProductCatalogue";
+import Footer from "./pages/Footer";
+import React from "react";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {/*<Route path="/about" element={<About />} />*/}
-      {/*<Route path="/skills" element={<Skills />} />*/}
-      {/*<Route path="/experience" element={<Experience />} />*/}
-      {/*<Route path="/education" element={<Education />} />*/}
-      {/*<Route path="/contacts" element={<Contacts />} />*/}
-    </Routes>
+    <>
+      <AppAppBar />
+      <IntroPage />
+      <About />
+      <Skills />
+      <Experience />
+      <ProductCatalogue />
+      <Contacts />
+      <Footer />
+    </>
   );
 }
 

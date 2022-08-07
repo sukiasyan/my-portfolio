@@ -1,25 +1,26 @@
 import React from "react";
 import makeStyles from "@mui/styles/makeStyles";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import {
   AppBar,
+  Container,
   IconButton,
-  Toolbar,
-  Typography,
   Menu,
   MenuItem,
-  Tooltip,
-  Container,
-  Avatar,
-  Button,
+  Toolbar,
+  Typography,
 } from "@mui/material";
 import { Box } from "@mui/system";
-import AcUnitIcon from "@mui/icons-material/AcUnit";
 import MenuIcon from "@mui/icons-material/Menu";
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
+    backgroundColor: "#ED6C03",
+    boxShadow: "none",
+  },
+  link: {
+    textDecoration: "none",
+    color: "#6e6e6e",
   },
 });
 
@@ -39,72 +40,18 @@ export const Header = () => {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "#F4682CFF" }}>
+    <AppBar position="static" className={classes.root}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AcUnitIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/about">About</Link>
-            </Button>{" "}
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/about">About</Link>
-            </Button>{" "}
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/about">About</Link>
-            </Button>{" "}
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/about">About</Link>
-            </Button>{" "}
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              <Link to="/about">About</Link>
-            </Button>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ flexGrow: 1, display: "flex" }}>
             <IconButton
               size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
@@ -118,66 +65,52 @@ export const Header = () => {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: "block",
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  <Link to="/">Home</Link>
+                  <Link smooth to="#introPage" className={classes.link}>
+                    Home
+                  </Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  <Link to="/about">About</Link>
+                  <Link smooth to="#about" className={classes.link}>
+                    About
+                  </Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  <Link to="/education">Education</Link>
+                  <Link to="/education" className={classes.link}>
+                    Education
+                  </Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  <Link to="/experience">Experience</Link>
+                  <Link smooth to="#experience" className={classes.link}>
+                    Experience
+                  </Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  {" "}
-                  <Link to="/skills">Skills</Link>
+                  <Link smooth to="#skills" className={classes.link}>
+                    Skills
+                  </Link>
                 </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
-                  <Link to="/contacts">Contacts</Link>
+                  <Link smooth to="#contacts" className={classes.link}>
+                    Contacts
+                  </Link>
                 </Typography>
               </MenuItem>
             </Menu>
-          </Box>
-          <AcUnitIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </Tooltip>
           </Box>
         </Toolbar>
       </Container>
